@@ -5,11 +5,12 @@ my plans:
 - step 1, i will learn these:
 1. directory structure
 2. design patterns
-3. database connection
-4. migration
-5. create user crud xD
-6. routing
-7. deploy
+3. architecture setup
+4. routing
+5. database connection
+6. migration
+7. create user crud xD
+8. deploy
 
 - step 2, i will improve it by creating these:
 1. create role crud
