@@ -1,0 +1,26 @@
+# Compiled binary
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Binary
+/bin/
+/bin/*
+!/bin/go-build/
+
+# Go specific
+*.d
+*.h
+*.test
+*.out
+/go.sum
+/go.mod
+/_test/
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Dependency directories
+/vendor/
+/Godeps/
