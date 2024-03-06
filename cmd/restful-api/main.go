@@ -5,9 +5,6 @@ import (
 	"log"
 	"os"
 
-	"github.com/bhovdair/go-rest/api/v1/handlers"
-	"github.com/bhovdair/go-rest/repositories"
-	"github.com/bhovdair/go-rest/services"
 	"github.com/gin-gonic/gin"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/joho/godotenv"
@@ -32,16 +29,9 @@ func main() {
 	}
 	defer db.Close()
 
-	userRepo := repositories.NewUserRepository(db)
-	userService := services.NewUserService(userRepo)
 	router := gin.Default()
-	userHandler := handlers.NewUserHandler(userService)
-
-	router.GET("/api/v1/users", userHandler.GetAllUsers)
-	router.GET("/api/v1/users/:id", userHandler.GetUserByID)
-	router.POST("/api/v1/users", userHandler.CreateUser)
-	router.PUT("/api/v1/users/:id", userHandler.UpdateUser)
-	router.DELETE("/api/v1/users/:id", userHandler.DeleteUser)
+	router.Use(gin.Logger())
+	initRoutes(router, db)
 
 	router.Run("localhost:8080")
 
