@@ -1,4 +1,4 @@
-This repo is used for my roadmap to learn golang in my way. do not rush me xD~
+This repo is used for my roadmap to learn golang.
 The goal is to create a restful webservice.
 
 my plans:
